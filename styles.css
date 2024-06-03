@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
 
 body {
-  font-weight: 700px;
+  font-family: 'Teko', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,15 +20,13 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
   color: black;
-  margin-right: 50px;
-  padding-right: 50%;
 }
 
 nav ul {
@@ -62,6 +60,7 @@ nav a {
 
 .hero {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 50px 0;
   position: relative;
@@ -74,34 +73,35 @@ nav a {
   left: 0;
   width: 100%;
   height: 100%;
-  /* background: radial-gradient(circle, rgba(255,0,0,0.5) 0%, rgba(255,0,0,0) 70%); */
   z-index: -1;
 }
 
 .hero-text {
-  max-width: 50%;
+  max-width: 100%;
+  text-align: center;
   z-index: 1;
-  font-weight: bolder;
 }
 
 .hero-text h1 {
-  font-size: 70px;
+  font-size: 3rem;
   font-weight: bolder;
-  top: 70%;
 }
 
 .hero-text p {
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .cta-buttons {
   display: flex;
+  flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 .hero-image {
-  max-width: 50%;
+  max-width: 100%;
   z-index: 1;
+  margin-top: 20px;
 }
 
 .hero-image img {
@@ -119,7 +119,6 @@ nav a {
   background: #f0f0f0;
 }
 
-/* Additional styles for background stars and other effects */
 body::before {
   content: "";
   position: absolute;
@@ -139,19 +138,12 @@ body::before {
   right: 600px;
 }
 
-/* .tagline{
-    background: radial-gradient(circle, rgba(255,0,0,0.5) 0%, rgba(255,0,0,0) 70%);
-} */
-
 .t1 {
   position: absolute;
   right: 350px;
   top: 20px;
 }
 
-/* .section{
-    background: radial-gradient(circle, rgba(255,0,0,0.5) 0%, rgba(255,0,0,0) 70%);
-} */
 .text {
   color: red;
   display: block;
@@ -303,7 +295,6 @@ body::before {
   bottom: -1150px;
   display: flex;
   justify-content: end;
-
 }
 
 .footer {
@@ -313,7 +304,6 @@ body::before {
   bottom: 0;
   width: 100%;
 }
-
 
 .footer-container {
   display: flex;
@@ -383,11 +373,87 @@ body::before {
   color: #666;
 }
 
-.frame-1{
-    padding-top : 10px;
-    position: absolute;
-    top: 2100px;
-    left: 13%;
-  
+.frame-1 {
+  padding-top: 10px;
+  position: absolute;
+  top: 2100px;
+  left: 13%;
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 0.875rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-image {
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    transform: none;
+  }
+
+  .text2 {
+    font-size: 2rem;
+  }
+
+  .text4, .text5, .text-5A {
+    font-size: 1.25rem;
+  }
+
+  .text3, .text6, .text-6A {
+    font-size: 1rem;
+  }
+
+  .sec-3 {
+    position: static;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+
+  .pattern, .pattern2, .star, .star2, .star3 {
+    display: none;
+  }
+
+  .b-1, .b-2, .b-2A, .frame-1, .t1 {
+    display: none;
+  }
+}
